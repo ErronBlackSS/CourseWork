@@ -1,0 +1,29 @@
+.convertionMain {
+    display: block;
+    padding-top: 1%;
+    text-align: center;
+    height: 100%;
+}
+.curIn {
+    border: 1px solid teal;
+    border-radius: 3px;
+    background: #ffffff !important;
+    outline: none;
+    height: 24px;
+    color: black;
+    font-size: 18px;
+    padding-top: 20px;
+    text-align: center;
+    width: 70%;
+    align-items: center;
+}
+.curSel {
+    margin-right: 1%;
+    padding: 15px;
+}
+.curSel__control {
+    max-width: 100px;
+}
+.text {
+    margin-bottom: 10px;
+}
