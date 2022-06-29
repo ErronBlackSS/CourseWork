@@ -58,11 +58,11 @@ const Converter = (props) => {
             <h1>Конвертер валют</h1>
             <p className={classes.text}>У меня есть</p>
             <input className={classes.curIn} onChange={e => { setInputValue(e.target.value) }} />
-            <Select maxMenuWidth={30} defaultValue={0} className={classes.curSel} onChange={e => { changeFirstSelect(e); convert()}} options={props.countries}/>
+            <Select className={classes.curSel} onChange={e => { changeFirstSelect(e); convert()}} options={props.countries}/>
             <FontAwesomeIcon icon={faEquals} />
             <p className={classes.text}>Я хочу</p>
             <input className={classes.curIn} value={result} disabled />
-            <Select maxMenuWidth={30} defaultValue={selected[1]} className={classes.curSel} onChange={e => { changeSecondSelect(e); convert()}} options={props.countries}/>
+            <Select defaultValue={selected[1]} className={classes.curSel} onChange={e => { changeSecondSelect(e); convert()}} options={props.countries}/>
         </div>
     );
 };
