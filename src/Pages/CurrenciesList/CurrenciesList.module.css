@@ -35,8 +35,8 @@
     top: 50%;
     margin-top: -1.3em;
     background: #8FD4C1;
-    height: 2em;
-    width: 2em;
+    height: 2.5em;
+    width: 2.5em;
     line-height: 2em;
     border: .3em solid white;
     text-align: center;
@@ -49,4 +49,9 @@
 }
 .sel {
     padding: 0 20px;
+}
+
+.list-item {
+    color: #444444;
+    height: 100%;
 }

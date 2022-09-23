@@ -55,14 +55,24 @@ const Converter = (props) => {
 
     return (
         <div className={classes.convertionMain}>
-            <h1>Конвертер валют</h1>
-            <p className={classes.text}>У меня есть</p>
-            <input className={classes.curIn} onChange={e => { setInputValue(e.target.value) }} />
-            <Select className={classes.curSel} onChange={e => { changeFirstSelect(e); convert()}} options={props.countries}/>
-            <FontAwesomeIcon icon={faEquals} />
-            <p className={classes.text}>Я хочу</p>
-            <input className={classes.curIn} value={result} disabled />
-            <Select defaultValue={selected[1]} className={classes.curSel} onChange={e => { changeSecondSelect(e); convert()}} options={props.countries}/>
+            <div className="container-fluid">
+                <h1>Конвертер валют</h1>
+                <div className="row">
+                    <div className='col-5'>
+                        <p className={classes.text}>У меня есть</p>
+                        <input className={classes.curIn} onChange={e => { setInputValue(e.target.value) }} />
+                        <Select className={classes.curSel} onChange={e => { changeFirstSelect(e); convert()}} options={props.countries}/>
+                    </div>
+                    <div className='col-2 mt-5'>
+                        <FontAwesomeIcon icon={faEquals} />
+                    </div>
+                    <div className='col-5'>
+                        <p className={classes.text}>Я хочу</p>
+                        <input className={classes.curIn} value={result} disabled />
+                        <Select defaultValue={selected[1]} className={classes.curSel} onChange={e => { changeSecondSelect(e); convert()}} options={props.countries}/>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };

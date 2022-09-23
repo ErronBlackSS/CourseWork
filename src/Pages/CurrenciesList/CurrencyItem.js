@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router';
 
 const CurrencyItem = (props) => {
 
@@ -20,12 +21,24 @@ const CurrencyItem = (props) => {
         }
     }
 
+    function CurrencyLineItem() {
+        return (
+            <p>{props.data.Nominal} {props.data.CharCode} - {props.data.result.toPrecision(5)} {props.base}. <span style={color}>{change}</span></p>
+        )
+    }
+
+    const navigate = useNavigate();
+
+    function useGotoCurrencyPage() {
+        navigate('/' + props.data.CharCode);
+    }
+
     const change = getChange()
     const color = getColor();
 
     return (
-        <li>
-            <p>{props.data.Nominal} {props.data.CharCode} - {props.data.result.toPrecision(5)} {props.base}. <span style={color}>{change}</span></p>
+        <li onClick={useGotoCurrencyPage}>
+            <CurrencyLineItem />
         </li>
     )
 }
