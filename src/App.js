@@ -34,7 +34,7 @@ function App() {
             })
     }, [])
 
-  const title = 'Список валют'
+    const title = 'Список валют'
     if(isLoading) {
         return (
             <div>

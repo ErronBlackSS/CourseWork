@@ -9,25 +9,25 @@ const CurrencyItemPage = (props) => {
     const params = useParams()
 
     useEffect(() => {
-        const currentCurrency = LAST_MONTH_CURRENCIES[params.id]
+        const currentCurrency = { name: params.id, data: LAST_MONTH_CURRENCIES[params.id] }
         setCurrentCurrency(currentCurrency)
     }, [params.id])
 
     const CurrencyName = () => {
         return ( 
-            currentCurrency?.Name ? currentCurrency.Name : currencyName
+            currencyName
         )
     }
 
     const CurrencyDynamic = () => {
-        if (currentCurrency?.dates) {
+        if (currentCurrency?.data) {
             return ( 
                 <div className='col-md-8 mx-auto text-center mt-5'>
-                    <ol>
-                        {currentCurrency.dates.map((currency) => {
-                            return <li key={currency.date}> {currency.date} - {currency.value} </li>
+                    <ul className='list-group'>
+                        {currentCurrency.data.map((currency) => {
+                            return <li className='list-group-item' key={currency["<DATE>"]}> {currency["<DATE>"]} - {currency["<HIGH>"]} </li>
                         })}
-                    </ol>
+                    </ul>
                 </div>
             )
         }
